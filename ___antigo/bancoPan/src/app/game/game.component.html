@@ -1,0 +1,15 @@
+<!-- <div *ngFor="let game of gameSingle">
+	<p>ID: {{game.id}}</p>
+	<p>Nome: {{game.name}}</p>
+</div> -->
+
+<div class="single" *ngFor="let game of gameSingle" [ngStyle]="{'background-image': 'url(' + game.img + ')'}">
+	<div class="header">
+		<a href="#/" class="btnVoltar"></a>
+		<h2 class="title">{{game.name}}</h2>
+	</div>
+	<div class="content">
+		<h3>{{game.name}}</h3>
+		<p>Preço: {{game.preco}}<br/>Info: {{game.info}}</p>
+	</div>
+</div>

@@ -1,7 +1,11 @@
+import { GamesService2 } from './games/games.services';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
+import { ResponsiveState } from 'responsive-directives-angular2';
 
 import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
@@ -20,9 +24,11 @@ import { GamesComponent } from './games/games.component';
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    InfiniteScrollModule,
+    Ng2DeviceDetectorModule.forRoot()
   ],
-  providers: [],
+  providers: [GamesService2],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

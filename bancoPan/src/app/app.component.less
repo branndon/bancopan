@@ -17,7 +17,7 @@
 .noPadding{ padding: 0!important; }
 
 .home{
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 
 /* Header */
@@ -65,8 +65,8 @@
 
 /* Lista itens */
 .itens{
-	div + div + div + div + div{
-		margin-top: 20px;
+	._item{
+		margin-bottom: 20px;
 	}
 
 	.img{
@@ -91,10 +91,11 @@
 			color: white;
 			border-bottom-left-radius: 10px;
 			border-bottom-right-radius: 10px;
+			min-height: 75px;
 
 			h2{
 				font-size: 16px;
-				line-height: 18px;
+				line-height: 22px;
 				font-weight: lighter;
 			}
 		}
@@ -157,11 +158,37 @@
 		p{
 			font-weight: lighter;
 			font-size: 15px;
+			line-height: 22px;
+			margin: 0;
 		}
 	}
 }
 
 
+// Mobile
+@media only screen and (max-width: 500px) {
+	.filtro{
+		button{
+			font-size: 13px;
+			&:nth-child(2){
+				margin-right: 10px;
+			}
+		}
+	}
+	.itens{
+		._item{
+			.img{
+				min-height: 210px;
+				.content{
+					h2{
+						font-size: 14px;
+						line-height: 20px;
+					}
+				}
+			}
+		}
+	}	
+}
 
 
 

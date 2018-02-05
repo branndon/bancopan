@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { UserModel } from './user.model';
+// import { Injectable } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
+// import { Observable } from 'rxjs/Observable';
+// // import { UserModel } from './user.model';
 
-@Injectable()
-export class UserService {
+// @Injectable()
+// export class UserService {
 
-  constructor(private http: HttpClient) {}
+//   constructor(private http: HttpClient) {}
 
-  list(): Observable<UserModel> {
-    return this.http.get('/api/users');
-  }
-}
+//   list(): Observable<UserModel> {
+//     return this.http.get('/api/users');
+//   }
+// }

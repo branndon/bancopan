@@ -1,4 +1,5 @@
 <div class="main container home">
+
     <!-- header -->
     <div class="row header">
       <div class="col-lg-12 noPadding">
@@ -13,16 +14,20 @@
 
     <!-- filtro -->
     <div class="row filtro">
-        <span>Filtrar por:</span> <button type="button" class="btn btn-primary">Populariedade</button> <button type="button" class="btn btn-primary">Visualizações</button>
+        <span>Filtrar por:</span> 
+        <button type="button" class="btn btn-primary" (click)="orderBy('popularity')">Populariedade</button>
+        <button type="button" class="btn btn-primary" (click)="orderBy('viewers')">Visualizações</button>
     </div>
 
     <!-- lista itens -->
-    <div class="row itens">
-        <div class="col-6 col-xs-2 col-md-4 col-lg-3 col-xl-3" *ngFor="let game of games | filter:buscar">
-            <a href="/game/{{game.id}}">
-                <div class="img" [ngStyle]="{'background-image': 'url(' + game.img + ')'}">
+    <div class="row itens search-results" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="1500" (scrolled)="onScroll()">
+        <div class="col-6 col-xs-2 col-md-4 col-lg-3 col-xl-3 _item" *ngFor="let game of games | filter:buscar">
+            <a href="/game/{{game.game._id}}" *ngIf="game">
+                <div class="img" [ngStyle]="{'background-image': 'url(' + game.game.box.large + ')'}">
                     <div class="content">
-                        <h2>{{game.name}}</h2>
+                        <h2>{{game.game.name}}</h2>
+                        <p style="display:none;">{{game.viewers}} visualizações</p>
+                        <p style="display:none;">{{game.popularity}} popularidade</p>
                     </div>
                 </div>
             </a>
